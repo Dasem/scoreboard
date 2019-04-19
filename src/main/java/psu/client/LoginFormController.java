@@ -38,7 +38,7 @@ public class LoginFormController {
         ConnectionResult connectionResult = ClientMessageWorker.getInstance().tryCreateConnection(userNameField.getText());
         switch (connectionResult) {
             case SUCCESS:
-                showAlertMessage("Подключение", "Статус", "Успешно подключен", Alert.AlertType.INFORMATION);
+                //showAlertMessage("Подключение", "Статус", "Успешно подключен", Alert.AlertType.INFORMATION);
                 createMainForm();
                 FileExporterClient.loginFormStage.close();
                 clientMessager = new Thread(ClientMessageWorker.getInstance());
@@ -57,7 +57,7 @@ public class LoginFormController {
 
     private void createMainForm() {
         Pane mainWindow = getMainFormResource();
-        Scene mainScene = new Scene(mainWindow, 700, 400);
+        Scene mainScene = new Scene(mainWindow, 549, 289);
         Stage stage = new Stage();
         stage.setScene(mainScene);
         stage.setTitle(MessageFormat.format(GlobalConstants.FILE_SENDER_TITLE, userNameField.getText()));

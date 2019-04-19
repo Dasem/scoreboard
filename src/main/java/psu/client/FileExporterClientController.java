@@ -69,12 +69,12 @@ public class FileExporterClientController {
         selectedUser = usersList.getSelectionModel().getSelectedItem();
 
         if (selectedUser == null) {
-            showAlertMessage("Отправка файла", "Статус", "Не выбран получатель файла", Alert.AlertType.ERROR);
+            showAlertMessage("Sending File", "", "Choose accepter from user list", Alert.AlertType.ERROR);
             return;
         }
 
         if (openedFile == null) {
-            showAlertMessage("Отправка файла", "Статус", "Не выбран файл", Alert.AlertType.ERROR);
+            showAlertMessage("Sending File", "", "File not chosen", Alert.AlertType.ERROR);
             return;
         }
 
@@ -93,7 +93,7 @@ public class FileExporterClientController {
     @FXML
     private void openFileDialog() {
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Укажите файл для отправки");
+        fileChooser.setTitle("Choose file");
         openedFile = fileChooser.showOpenDialog(root.getScene().getWindow());
         if (openedFile != null) {
             fileSize.setText(MessageFormat.format(GlobalConstants.FILE_SIZE_PATTERN, getFileSize(openedFile)));
@@ -105,11 +105,11 @@ public class FileExporterClientController {
     @FXML
     private void fileFolder() {
         DirectoryChooser directoryChooser = new DirectoryChooser();
-        directoryChooser.setTitle("Укажите папку принятия файлов");
+        directoryChooser.setTitle("Choose directory for download");
         openedFile = directoryChooser.showDialog(root.getScene().getWindow());
         if (openedFile != null) {
             destinationFolder = openedFile.getAbsolutePath();
-            Utils.showAlertMessage("Принятые файлы", "Статус", "Выбран путь, куда принять файл: ''" + destinationFolder + "''", Alert.AlertType.INFORMATION);
+            Utils.showAlertMessage("Accepted files", "Header", "File path: ''" + destinationFolder + "''", Alert.AlertType.INFORMATION);
         }
     }
 

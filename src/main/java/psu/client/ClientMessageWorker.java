@@ -81,7 +81,7 @@ public class ClientMessageWorker implements Runnable {
     private static String getServerIP() throws IOException {
         byte[] buf = GlobalConstants.GET_SERVER_IP.getBytes();
         DatagramSocket socketUDP = new DatagramSocket();
-        InetAddress address = InetAddress.getByName("192.168."+ Utils.getThirdIpPart() +".255"); // а что если маска сети другая??? TODO придумать способ получения широковещательного адреса
+        InetAddress address = InetAddress.getByName("192.168."+ "56" +".255"); // а что если маска сети другая??? TODO придумать способ получения широковещательного адреса
         DatagramPacket packet = new DatagramPacket(buf, buf.length, address, GlobalConstants.PORT);
         socketUDP.send(packet);
         packet = new DatagramPacket(buf, buf.length);
@@ -97,7 +97,7 @@ public class ClientMessageWorker implements Runnable {
             inputStream = clientSocket.getInputStream();
             messageInput = new ObjectInputStream(inputStream);
         } catch (Exception ex) {
-            showAlertMessage("Подключение", "Статус", "Сервер недоступен", Alert.AlertType.WARNING);
+            showAlertMessage("Connection Error", "", "No Server available", Alert.AlertType.WARNING);
         }
     }
 
@@ -106,7 +106,7 @@ public class ClientMessageWorker implements Runnable {
         try {
             while (clientSocket.isConnected()) {
                 Message message = (Message) messageInput.readObject();
-                System.out.println("Пришёл MessageType: " + message.getMessageType().name());
+                System.out.println("Message MessageType: " + message.getMessageType().name());
                 switch (message.getMessageType()) {
                     case USER_CONNECTED:
                         // Обновить список пользователей

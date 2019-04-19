@@ -10,12 +10,12 @@ public class GlobalConstants {
     public static final String GET_SERVER_IP = "GET_SERVER_IP";
 
     //GUI messages
-    public static final String FILE_SENDER_TITLE = "FileSender | Вы вошли как: {0}";
-    public static final String FILE_SIZE_PATTERN = "Размер файла: {0} байт";
-    public static final String SEND_FILE_SUCCESS = "Файл успешно отправлен";
-    public static final String ACCEPT_FILE_SUCCESS = "Файл {0} успешно получен и доступен по пути ''{1}''";
-    public static final String CONNECTION_LOST = "Соединение с пользователем ''{0}'' утеряно";
-    public static final String MESSAGE_SEND_ERROR = "Ошибка при отправке сообщения клиенту ''{0}''";
+    public static final String FILE_SENDER_TITLE = "FileSender | Entered as: {0}";
+    public static final String FILE_SIZE_PATTERN = "File size: {0} байт";
+    public static final String SEND_FILE_SUCCESS = "Success";
+    public static final String ACCEPT_FILE_SUCCESS = "File {0} available at path ''{1}''";
+    public static final String CONNECTION_LOST = "Connection with ''{0}'' lost";
+    public static final String MESSAGE_SEND_ERROR = "Error with sending to user ''{0}''";
 
     //layouts
     public final static String LOGIN_WINDOW_FXML = "/layouts/LoginTemplate.fxml";
