@@ -71,7 +71,7 @@ public class ClientMessageWorker implements Runnable {
     private static String getServerIP() throws IOException {
         byte[] buf = GlobalConstants.GET_SERVER_IP.getBytes();
         DatagramSocket socketUDP = new DatagramSocket();
-        InetAddress address = InetAddress.getByName("192.168." + Utils.getThirdIpPart() + ".255");
+        InetAddress address = InetAddress.getByName("192.168.56.255");
         DatagramPacket packet = new DatagramPacket(buf, buf.length, address, GlobalConstants.PORT);
         socketUDP.send(packet);
         packet = new DatagramPacket(buf, buf.length);
