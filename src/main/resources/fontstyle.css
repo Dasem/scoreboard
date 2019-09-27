@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'a_LCDNova';
+    font-style: normal;
+    font-weight: 400;
+    src: local('a_LCDNova'), local('a_LCDNova-Regular'),
+    url(http://allfont.ru/cache/fonts/a_lcdnova_17e8c6195324fc7fe052b0697a6ca268.woff) format('woff'),
+    url(http://allfont.ru/cache/fonts/a_lcdnova_17e8c6195324fc7fe052b0697a6ca268.ttf) format('truetype');
+}
+
+.label {
+    -fx-font-family: 'a_LCDNova';
+    -fx-font-size: 20;
+}
+
+.button .text {
+    -fx-font-family: 'a_LCDNova';
+}

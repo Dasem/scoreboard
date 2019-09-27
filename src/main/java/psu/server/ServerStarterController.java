@@ -3,6 +3,7 @@ package psu.server;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -42,6 +43,7 @@ public class ServerStarterController {
 
         Pane mainWindow = getFromResource(GlobalConstants.SERVER_MAIN_TEMPLATE_FXML);
         Scene mainScene = new Scene(mainWindow);
+        mainScene.getStylesheets().add(getClass().getResource("/fontstyle.css").toExternalForm());
         Stage stage = new Stage();
         stage.setScene(mainScene);
         stage.setTitle(GlobalConstants.SCOREBOARD_SERVER_TITLE);
